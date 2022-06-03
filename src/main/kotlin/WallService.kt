@@ -18,8 +18,4 @@ object WallService {
         }
         return false
     }
-
-//    fun clear(){
-//        posts.run { clear() }
-//    }
 }
