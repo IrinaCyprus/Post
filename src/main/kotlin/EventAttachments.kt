@@ -1,21 +1,12 @@
-data class EventAttachments(
+data class Event(
     val id: Int,
     val time: Int,
     val member_status: Int
 )
 
-class Event : Attachments("event") {
-     fun get(): EventAttachments {
-        val event1 = EventAttachments(1, 2, 3)
-        return event1
+class EventAttachments : Attachments("event") {
+    override fun get(): Event {
+        return Event(1, 2, 3)
     }
 
-//    fun get(): EventAttachments {
-//        return EventAttachments(1, 2, 3)
-//    }
-
-    override fun printType() {
-        println(type)
-        println(get())
-    }
 }

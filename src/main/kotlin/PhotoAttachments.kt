@@ -1,15 +1,11 @@
-data class PhotoAttachments(
+data class Photo(
     val photo: String,
     val post_id: Int
 )
 
-class Photo : Attachments("photo") {
-    fun get(): PhotoAttachments {
-        return PhotoAttachments("jpeg", 2)
+class PhotoAttachments : Attachments("photo") {
+    override fun get(): Photo {
+        return Photo("jpeg", 2)
     }
 
-    override fun printType() {
-        println(type)
-        println(get())
-    }
 }

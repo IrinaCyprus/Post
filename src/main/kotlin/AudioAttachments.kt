@@ -1,14 +1,10 @@
-data class AudioAttachments(
+data class Audio(
     val audio: String
 )
 
-class Audio : Attachments("audio") {
-    fun get(): AudioAttachments {
-        return AudioAttachments("mp4")
+class AudioAttachments(val audio: Audio) : Attachments("audio") {
+    override fun get(): Audio {
+        return Audio("mp4")
     }
 
-    override fun printType() {
-        println(type)
-        println(get())
-    }
 }
