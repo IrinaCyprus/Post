@@ -21,13 +21,26 @@ object WallService {
         return false
     }
 
+//    fun createComment(comment: Comment) {
+//        for (post in posts) {
+//            if (post.id == comment.postId) {
+//                comments += comment
+//            } else {
+//                throw PostNotFoundException()
+//            }
+//        }
+//    }
+
     fun createComment(comment: Comment) {
+        var isPostExists = false
+
         for (post in posts) {
             if (post.id == comment.postId) {
                 comments += comment
-            } else {
-                throw PostNotFoundException()
+                isPostExists = true
             }
         }
+
+        if (!isPostExists) throw PostNotFoundException()
     }
 }
